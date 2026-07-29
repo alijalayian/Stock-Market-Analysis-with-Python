@@ -1,8 +1,8 @@
 # Stock Analysis Project
 
-A Python-based stock market analysis notebook that uses historical data to compare the performance of **Apple (AAPL)**, **Microsoft (MSFT)**, and **Tesla (TSLA)** between **2022-01-01** and **2025-01-01**, benchmarked against the **S&P 500**.
+A Python-based stock market analysis notebook that uses historical data to compare the performance of **Apple (AAPL)**, **Microsoft (MSFT)**, and **Tesla (TSLA)** between **2022-01-01** and **2025-01-01**, benchmarked against the **S&P 500**, with risk-adjusted metrics and trend analysis.
 
-The project downloads stock data using `yfinance`, performs financial analysis, and visualizes price trends, daily returns, volatility, correlations, risk-adjusted performance, and relative performance against the broader market.
+The project downloads stock data using `yfinance`, performs financial analysis, and visualizes price trends, daily returns, volatility, correlations, risk-adjusted performance, relative performance against the broader market, and long-term trend signals using moving averages.
 
 ---
 
@@ -20,6 +20,8 @@ The project downloads stock data using `yfinance`, performs financial analysis, 
 - Calculate total return for each stock
 - Calculate Sharpe ratio (risk-adjusted return) for each stock
 - Compare each stock's normalized performance against the S&P 500 benchmark
+- Calculate 50-day and 200-day moving averages
+- Identify long-term trend direction using moving average crossovers
 - Summarize key metrics in a table
 
 ---
@@ -47,7 +49,9 @@ The project downloads stock data using `yfinance`, performs financial analysis, 
 10. Calculate Sharpe ratio for each stock
 11. Download S&P 500 benchmark data
 12. Normalize and compare stock performance against the benchmark
-13. Create a summary table
+13. Calculate 50-day and 200-day moving averages
+14. Visualize price trend against moving averages
+15. Create a summary table
 
 ---
 
@@ -129,6 +133,11 @@ Raw prices across AAPL, MSFT, TSLA, and the S&P 500 are not directly comparable 
 
 ![Benchmark Comparison](images/benchmark_comparison.png)
 
+### Moving Averages & Trend Signals
+The notebook calculates 50-day and 200-day rolling moving averages to smooth out short-term price noise and reveal the underlying trend. A crossover where the 50-day average moves above the 200-day average (a "Golden Cross") is typically viewed as a bullish signal, while the opposite ("Death Cross") is viewed as bearish.
+
+![Moving Averages](images/moving_averages.png)
+
 ---
 
 ## Output Summary
@@ -142,6 +151,7 @@ The final output includes:
 - Total return summary table
 - Sharpe ratio for each stock
 - Normalized performance comparison against the S&P 500 benchmark
+- Moving average trend visualization
 
 ---
 
@@ -154,6 +164,7 @@ images/
     price_comparison.png
     correlation_heatmap.png
     benchmark_comparison.png
+    moving_averages.png
 ```
 
 ---
@@ -162,7 +173,6 @@ images/
 
 You can extend this project by adding:
 
-- Moving averages
 - Candlestick charts
 - Portfolio simulation
 - More stocks and sectors
